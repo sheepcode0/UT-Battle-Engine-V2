@@ -103,11 +103,7 @@ Yes or Yes
   ''')
  #boss attack
   if pc.lower() == 'item':
-   input('''
-  * Nothing
-  *
-  *
-  ''')
+   print()
   else:
    edmg = random.randint(3,5)
    hp -= edmg
