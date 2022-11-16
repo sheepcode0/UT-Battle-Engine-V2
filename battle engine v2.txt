@@ -1,4 +1,5 @@
-# just copy the code and put it in anything that can execute python code
+# if you are looking for the rest of the steps, just run the game
+# copy the code and paste it into a python code executer
 import random
 
 dmg = random.randint(4,7)
@@ -103,11 +104,7 @@ Yes or Yes
   ''')
  #boss attack
   if pc.lower() == 'item':
-   input('''
-  * Nothing
-  *
-  *
-  ''')
+   print()
   else:
    edmg = random.randint(3,5)
    hp -= edmg
