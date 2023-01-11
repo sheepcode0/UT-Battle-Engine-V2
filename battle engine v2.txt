@@ -1,6 +1,9 @@
 # if you are looking for the rest of the steps, just run the game
-# copy the code and paste it into a python code executer
 import random
+import os
+
+def clear():
+  os.system('cls')
 
 dmg = random.randint(4,7)
 hp = 20
@@ -13,36 +16,41 @@ name = ''
 for i in range(6):
  cc = input(f'''
   NAME THE CHARACTER
-
  A  B  C  D  E  F  G
  H  I  J  K  L  M  N
  O  P  Q  R  S  T  U
  V  W  X  Y  Z
      {name}
 ''')
+ clear()
  name += cc.upper()
 if len(name) > 6:
+ clear()
  input(f'''
  invalid name
  try again with a name thats less than 6 characters
  do you understand {name}?
  ''')
 else:
+ clear()
  input(f'''
 {name} WELCOME TO MY [[Game]]!!!!
 PRESS [[Enter]] ON M0ST [[Text]]
 ''')
+ clear()
  input('''
 * Theres a dummy standing there
  infront of you.
 * Its quite menacing.
 ''')
+ clear()
  input('''
 * Approach it?
 Yes or Yes
 ''')
 
  while True:
+  clear()
   pc = input(f'''
 [FIGHT][ACT][ITEM][MERCY]
  {name}  {hp}/{maxhp}
@@ -50,29 +58,34 @@ Yes or Yes
  #fight
   if pc.lower() == 'fight':
    dmg = random.randint(4,7)
+   clear()
    pc2 = input('''
  * Dummy
  
  ''')
    if pc2.lower() == 'dummy':
     ehp -= dmg
+    clear()
     input(f'''
   * You did {dmg} damage!
   * They have {ehp} hp left!
   ''')
  #act
   elif pc.lower() == 'act':
+   clear()
    pc2 = input('''
  * Check
  * Talk
  ''')
    if pc2.lower() == 'check':
+    clear()
     input(f'''
   * Dummy ATK 0? DEF 12  
   * Its made of mostly cotton
   * Its alive too!
   ''')
    else:
+    clear()
     input('''
   * You tried talking to it...
   * ...
@@ -80,11 +93,13 @@ Yes or Yes
   ''')
  #item
   elif pc.lower() == 'item':
+   clear()
    pc2 = input('''
  * Large cake
  
  ''')
    if pc2.lower() == 'cake':
+    clear()
     hp += 5 #you can change it easily
     input('''
   * You ate a tiny slice of cake
@@ -93,33 +108,39 @@ Yes or Yes
    if hp > 20:
     hp = 20
  #mercy
+   clear()
   elif pc.lower() == 'mercy':
    pc2 = input('''
  * Spare
  
  ''')
    if pc2.lower() == 'spare':
+    clear()
     input('''
   * Nope  
   ''')
  #boss attack
   if pc.lower() == 'item':
+   clear()
    print()
   else:
    edmg = random.randint(3,5)
    hp -= edmg
+   clear()
    input(f'''
  * The dummy attacked!
  * {edmg} damage dealt!
  ''')
   if hp < 1:
    hp = 0
+   clear()
    input('''
  * You lost against a dummy
  * How pathetic
  ''')
  #win
   if ehp < 0:
+   clear()
    input('''
  * YOU WON!
  * You earned 10 XP 15 G
@@ -127,6 +148,7 @@ Yes or Yes
  #loss
   if hp < 1:
    hp = 0
+   clear()
    input('''
  * You lost against a dummy
  * How pathetic
